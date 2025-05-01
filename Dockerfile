@@ -1,7 +1,7 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
 # Copy files and install dependencies
-WORKDIR /var/www/html
+WORKDIR /app
 COPY . .
 RUN composer install --no-dev
 
@@ -11,4 +11,4 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 RUN a2enmod rewrite
 
 EXPOSE 80
-CMD ["apache2-foreground"]
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "public"]
