@@ -1,4 +1,12 @@
 FROM php:8.2-apache
+# Install dependencies, including Composer
+RUN apt-get update && apt-get install -y \
+    unzip \
+    git \
+    curl \
+    libpng-dev libjpeg-dev libfreetype6-dev \
+    && curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
 
 # Set working directory
 WORKDIR /var/www/html
