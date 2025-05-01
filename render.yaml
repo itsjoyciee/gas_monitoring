@@ -2,14 +2,9 @@ services:
   - type: web
     name: gas_monitoring
     env: php
-    buildCommand: |
-      # Install dependencies (if using Composer)
-      composer install --no-dev --optimize-autoloader
-    startCommand: |
-      # Start PHP's built-in server (adjust `public/` if your entry point is elsewhere)
-      php -S 0.0.0.0:8000 -t public
+    buildCommand: composer install --no-dev --optimize-autoloader
+    startCommand: php -S 0.0.0.0:8000 -t public
     envVars:
       - key: APP_ENV
         value: production
-    # Only needed if your files are in a subdirectory (e.g., `public/`)
     staticPublishPath: ./public
