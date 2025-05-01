@@ -2,8 +2,7 @@
 services:
   - type: web
     name: gas_monitoring
-    dockerfile: Dockerfile
     env: php
-    buildCommand: composer install --no-dev  # If using Composer
-    startCommand: php -S 0.0.0.0:8000 -t public  # Serve from `public/`
+    buildCommand: composer install --no-dev --optimize-autoloader  # If using Composer
+    startCommand: /usr/bin/php -S 0.0.0.0:8000 -t public  # Serve from `public/`
     staticPublishPath: ./public  # Point to your web root
