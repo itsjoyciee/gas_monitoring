@@ -52,7 +52,7 @@
     
     <div class="gas-list">
         <!-- CO -->
-        <div class="gas-list-item">
+        <div class="gas-list-item" id="co-item">
             <div class="gas-info">
                 <i class="fas fa-skull-crossbones gas-icon"></i>
                 <div class="gas-title">
@@ -95,7 +95,7 @@
         </div>
         
         <!-- CO2 -->
-        <div class="gas-list-item">
+        <div class="gas-list-item" id="co2-item">
             <div class="gas-info">
                 <i class="fas fa-cloud gas-icon"></i>
                 <div class="gas-title">
@@ -138,7 +138,7 @@
         </div>
         
         <!-- SO2 -->
-        <div class="gas-list-item">
+        <div class="gas-list-item" id="so2-item">
             <div class="gas-info">
                 <i class="fas fa-biohazard gas-icon"></i>
                 <div class="gas-title">
@@ -181,7 +181,7 @@
         </div>
         
         <!-- CH4 -->
-        <div class="gas-list-item">
+        <div class="gas-list-item" id="ch4-item">
             <div class="gas-info">
                 <i class="fas fa-biohazard gas-icon"></i>
                 <div class="gas-title">
@@ -206,135 +206,6 @@
                     <div class="gas-history" id="ch4-history">
                         <canvas id="ch4-chart"></canvas>
                         <div class="recent-readings" id="ch4-readings">
-                            <h4>Recent Readings</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Time</th>
-                                        <th>Value</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Butane -->
-        <div class="gas-list-item">
-            <div class="gas-info">
-                <i class="fas fa-burn gas-icon"></i>
-                <div class="gas-title">
-                    <h3>Butane (C₄H₁₀)</h3>
-                    <div class="gas-history-toggle" onclick="toggleHistoryChart('butane')">
-                        <i class="fas fa-chart-line"></i> History
-                    </div>
-                </div>
-                <div class="gas-details">
-                    <p class="gas-description">Flammable hydrocarbon gas. Critical above 800 ppm.</p>
-                    <div class="gas-value">
-                        <div class="gauge" id="butane-gauge">
-                            <svg class="gauge-circle" viewBox="0 0 36 36">
-                                <path class="gauge-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="gauge-circle-fill" id="butane-gauge-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <div class="gauge-value" id="butane-gauge-value">0</div>
-                        </div>
-                        <div class="gas-reading" id="butane-reading">0 ppm</div>
-                        <div class="status safe" id="butane-status">Safe</div>
-                    </div>
-                    <div class="gas-history" id="butane-history">
-                        <canvas id="butane-chart"></canvas>
-                        <div class="recent-readings" id="butane-readings">
-                            <h4>Recent Readings</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Time</th>
-                                        <th>Value</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- LPG -->
-        <div class="gas-list-item">
-            <div class="gas-info">
-                <i class="fas fa-gas-pump gas-icon"></i>
-                <div class="gas-title">
-                    <h3>LPG</h3>
-                    <div class="gas-history-toggle" onclick="toggleHistoryChart('lpg')">
-                        <i class="fas fa-chart-line"></i> History
-                    </div>
-                </div>
-                <div class="gas-details">
-                    <p class="gas-description">Liquefied Petroleum Gas. Explosive above 1000 ppm.</p>
-                    <div class="gas-value">
-                        <div class="gauge" id="lpg-gauge">
-                            <svg class="gauge-circle" viewBox="0 0 36 36">
-                                <path class="gauge-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="gauge-circle-fill" id="lpg-gauge-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <div class="gauge-value" id="lpg-gauge-value">0</div>
-                        </div>
-                        <div class="gas-reading" id="lpg-reading">0 ppm</div>
-                        <div class="status safe" id="lpg-status">Safe</div>
-                    </div>
-                    <div class="gas-history" id="lpg-history">
-                        <canvas id="lpg-chart"></canvas>
-                        <div class="recent-readings" id="lpg-readings">
-                            <h4>Recent Readings</h4>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Time</th>
-                                        <th>Value</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Smoke -->
-        <div class="gas-list-item">
-            <div class="gas-info">
-                <i class="fas fa-smog gas-icon"></i>
-                <div class="gas-title">
-                    <h3>Smoke</h3>
-                    <div class="gas-history-toggle" onclick="toggleHistoryChart('smoke')">
-                        <i class="fas fa-chart-line"></i> History
-                    </div>
-                </div>
-                <div class="gas-details">
-                    <p class="gas-description">Particulate matter from combustion. Hazardous above 300 ppm.</p>
-                    <div class="gas-value">
-                        <div class="gauge" id="smoke-gauge">
-                            <svg class="gauge-circle" viewBox="0 0 36 36">
-                                <path class="gauge-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="gauge-circle-fill" id="smoke-gauge-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <div class="gauge-value" id="smoke-gauge-value">0</div>
-                        </div>
-                        <div class="gas-reading" id="smoke-reading">0 ppm</div>
-                        <div class="status safe" id="smoke-status">Safe</div>
-                    </div>
-                    <div class="gas-history" id="smoke-history">
-                        <canvas id="smoke-chart"></canvas>
-                        <div class="recent-readings" id="smoke-readings">
                             <h4>Recent Readings</h4>
                             <table>
                                 <thead>
