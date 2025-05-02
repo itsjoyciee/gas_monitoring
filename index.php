@@ -545,5 +545,16 @@
             }
         });
     </script>
+    //posgresql connection
+    <script>
+fetch("http://your_server_ip:3000/data")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("value").innerText = data.sensor_value;
+  });
+</script>
+
+<p>Sensor Value: <span id="value">Loading...</span></p>
+
 </body>
 </html>
